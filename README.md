@@ -4,6 +4,10 @@
 
 Very usable and simple javascript object-oriented timer implementation.
 
+### Demo:
+
+https://cdn.rawgit.com/cloady/amazing.timer.js/master/example.html
+
 ### Examples:
 
 * Set interval analog

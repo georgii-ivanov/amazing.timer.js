@@ -7,7 +7,7 @@
     var timer1,
         display = document.getElementById('display');
         
-    function runCountDown() {
+    window.runCountDown() {
         (timer1) && (timer1.stop());
         timer1 = new Timer(function() {
             display.innerHTML = (20000-this.total())/1000;
@@ -15,7 +15,7 @@
         }, 1000);
     }
     
-    function runInterval() {
+    window.runInterval() {
         (timer1) && (timer1.stop());
         timer1 = new Timer(function() {
             display.innerHTML = this.total()/1000;

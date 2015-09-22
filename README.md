@@ -4,7 +4,7 @@
 
 Very usable and simple javascript object-oriented timer implementation.
 
-# Examples:
+## Examples:
 
 * Set timer 2 seconds
 

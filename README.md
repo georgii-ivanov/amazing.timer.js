@@ -6,6 +6,18 @@ Very usable and simple javascript object-oriented timer implementation.
 
 ### Examples:
 
+* Set interval analog
+
+```
+   var timer1 = new Timer(function() {
+      console.log('a 1 second left');
+      return true;
+   }, 1000);
+   
+   // timer1.stop();
+```
+
+
 * Set timer 2 seconds
 
 ```

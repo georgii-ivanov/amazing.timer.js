@@ -14,6 +14,13 @@
             return (this.total()<20000);
         }, 1000);
     };
+
+    window.runSimple = function() {
+        (timer1) && (timer1.stop());
+        timer1 = new Timer(function() {
+            display.innerHTML = 'Fired after 2 seconds!';
+        }, 2000);
+    };
     
     window.runInterval = function() {
         (timer1) && (timer1.stop());
@@ -49,6 +56,7 @@
 </head>
 <body>
   <div id="display"></div>
-  <div><button onclick="runInterval()">Run Interval</button> <button onclick="runCountDown()">Run Countdown</button></div>
+  <div><button onclick="runSimple()">Run Simple Timer</button> <button onclick="runInterval()">Run Interval</button> <button onclick="runCountDown()">Run Countdown</button></div>
   <div><button id="runWatch" onclick="runWatch()">Run watch</button><button disabled="disabled" id="loopWatch" onclick="loopWatch()">Loop watch</button><button disabled="disabled" id="stopWatch" onclick="stopWatch()">Stop watch</button></div>
 </body>
+</html>

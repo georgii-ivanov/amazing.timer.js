@@ -59,9 +59,11 @@ Very usable and simple javascript object-oriented timer implementation.
       return true;
   });
   
-  setTimeout(function() { timer1.fire(); }, 5051);
-  console.log('3 seconds timeout');
-  setTimeout(function() { console.log('3 seconds passed'); }, 3000);
-  timer1.loop(); 
-  setTimeout(function() { timer1.fire(); }, 3051);
+  setTimeout(function() { timer1.fire(); 
+       console.log('3 seconds timeout');
+         setTimeout(function() { console.log('3 seconds passed'); 
+             timer1.loop(); 
+             setTimeout(function() { timer1.fire(); }, 3051);
+     }, 3000);
+  }, 5051);
 ```

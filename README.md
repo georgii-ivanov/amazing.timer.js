@@ -71,6 +71,7 @@ Very usable and simple javascript object-oriented timer implementation.
 ### Methods:
 
 * ```ready()``` -> true/false. Get ready state of timer.
+* ```tick()``` -> integer. Get current iteration number.
 * ```time()``` -> integer. Get iteration time in ms.
 * ```total()``` -> integer. Get total timer run time in ms.
 * ```fire()``` -> integer. Fire event before timer tick (you can sent time in ms as parameter).

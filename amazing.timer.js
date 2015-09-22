@@ -1,7 +1,7 @@
 (function() {
     var Timer = function(fn, interval) {
-        var timer, ready = true, self = this 
-            beg = fin = total = tick = 0;
+        var timer, ready = true, self = this,
+            beg = 0, fin = 0, total = 0, tick = 0;
 
         this.loop = function() {
             clearTimeout(timer);

@@ -26,7 +26,7 @@ https://rawgit.com/cloady/amazing.timer.js/master/example.html
 
 ```
    var timer1 = new Timer(function() {
-      console.log('fire in 30 seconds');
+      console.log('fire in 2 seconds');
    }, 2000);
 ```
 

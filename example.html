@@ -22,10 +22,33 @@
             return true;
         }, 1000);
     };
+    window.runWatch = function() {
+        (timer1) && (timer1.stop());
+        timer1 = new Timer(function() {
+            display.innerHTML = 'Current loop: '+this.tick()+', time: '+this.time()/1000;
+            return true;
+        });
+        document.getElementById('runWatch').disabled=true;
+        document.getElementById('loopWatch').disabled=false;
+        document.getElementById('stopWatch').disabled=false;
+    };
+    window.loopWatch = function() {
+        if (timer1) {
+          timer1.fire();
+          timer1.loop();
+        }
+    };
+    window.stopWatch = function() {
+        (timer1) && (timer1.stop());
+        document.getElementById('runWatch').disabled=false;
+        document.getElementById('loopWatch').disabled=true;
+        document.getElementById('stopWatch').disabled=true;
+    };
   };
   </script>
 </head>
 <body>
   <div id="display"></div>
-  <button onclick="runInterval()">Run Interval</button> <button onclick="runCountDown()">Run Countdown</button>
+  <div><button onclick="runInterval()">Run Interval</button> <button onclick="runCountDown()">Run Countdown</button></div>
+  <div><button id="runWatch" onclick="runWatch()">Run watch</button><button disabled="disabled" id="loopWatch" onclick="loopWatch()">Loop watch</button><button disabled="disabled" id="stopWatch" onclick="stopWatch()">Stop watch</button></div>
 </body>

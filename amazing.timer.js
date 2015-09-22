@@ -1,7 +1,7 @@
 (function() {
     var Timer = function(fn, interval, autostart) {
         var timer, ready = true, self = this,
-            total = 0, time = 0, tick = 0, loop = 0,
+            total = 0, time = 0, tick = 0, loop = 1,
             beg = new Date(), fin=new Date();
 
         this.loop = function() {
@@ -17,7 +17,8 @@
         };
 
         this.clear = function() {
-            loop=tick=total=time=0;
+            tick=total=time=0;
+            loop=1;
             beg=fin=new Date();
         };
 

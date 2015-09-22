@@ -1,5 +1,5 @@
 (function() {
-var Timer = function(fn, interval, autostart) {
+    var Timer = function(fn, interval, autostart) {
         var timer, ready = true, self = this,
             total = 0, time = 0, tick = 0,
             beg = new Date(), fin=new Date();

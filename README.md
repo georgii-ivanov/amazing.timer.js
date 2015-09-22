@@ -77,4 +77,4 @@ Very usable and simple javascript object-oriented timer implementation.
 * ```loop()``` -> integer. Starts new loop.
 * ```stop()``` -> null. Stop the timer.
 * ```start()``` -> null. Stop the timer.
-* ```clear()``` -> null. Reset timer values.
+* ```clear()``` -> null. Reset timer counters.

@@ -27,6 +27,9 @@
         };
 
         this.stop = function() {
+            fin=new Date();
+            time=fin-beg;
+            total+=time;
             ready = true;
             clearTimeout(timer);
         };

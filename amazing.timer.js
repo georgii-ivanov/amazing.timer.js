@@ -15,8 +15,7 @@
         };
 
         this.clear = function() {
-            tick=0;
-            total=0;
+            tick=total=beg=fin=0;
         };
 
         this.start = function() {

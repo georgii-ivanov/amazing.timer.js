@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    #display {
+      width: 100%;
+      height: 20%;
+    }
+
+    #display #loop {
+      font-size: 200%;
+      text-align: center;
+    }
+
+    #display #total {
+      text-align: center;
+      font-size: 350%;
+    }
+
+    #buttons {
+      text-align: center;
+    }
+
+    #history li {
+      width: 500px;
+      margin: auto;
+      padding: 5px;
+      border: 1px solid black;
+    }
+
+    #buttons button {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+  <script src="amazing.timer.js"></script>
+  <title>Amazing javascript timer examples</title>
+  <script>
+  window.onload = function() {
+    var timer1,
+        timer2,
+        display = document.getElementById('display'),
+        total = document.getElementById('total'),
+        loop = document.getElementById('loop'),
+        history = document.getElementById('history');
+        
+    window.runWatch = function() {
+        timer1 = new Timer(function() {
+          total.innerHTML = this.total()/1000;
+          loop.innerHTML = this.time()/1000;
+          return true;
+        }, 1);
+    };
+    window.loopWatch = function() {
+        var li = document.createElement('li');
+        li.innerHTML = 'Loop: <b>'+timer1.loop()+'</b>, time: <b>'+timer1.time()/1000+'</b>';
+        history.appendChild(li);
+        timer1.next();
+    };
+    window.stopWatch = function() {
+        timer1.stop();
+    };
+    window.resetWatch = function() {
+        timer1.clear();
+        total.innerHTML = '00:00,00';
+        loop.innerHTML = '00:00,00';
+    };
+  };
+  </script>
+</head>
+<body>
+  <div id="display">
+    <div id="loop">
+      00:00,00
+    </div>
+    <div id="total">
+      00:00,00
+    </div>
+  </div>
+  <div id="buttons">
+    <button id="runWatch" onclick="runWatch()">Start</button>
+    <button id="stopWatch" onclick="stopWatch()">Stop</button>
+    <button id="resetWatch" onclick="resetWatch()">Reset</button>
+    <button id="loopWatch" onclick="loopWatch()">Lap</button>
+  </div>
+  <ul id="history"></ul>
+</body>

@@ -57,10 +57,10 @@ Very usable and simple javascript object-oriented timer implementation.
 * Timer countdown example
 
 ```
-   var timer1 = new Timer(function() { 
-      console.log('countdown ... ', 20000-this.time()); 
-      return (this.time()<20000); 
-      }, 1000);
+   var timer1 = new Timer(function() {  
+      console.log('countdown', 20000-this.total()); 
+      return (this.total() < 20000);  
+   }, 1000);
 ```
       
 * Timer uses as stopwatch

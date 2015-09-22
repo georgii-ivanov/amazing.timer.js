@@ -49,7 +49,7 @@ Very usable and simple javascript object-oriented timer implementation.
   var ajaxLoaded = false;
   $.load('test.html', function(data) { ajaxLoaded = true });
   var timer1 = new Timer(function() {
-      console.log('time passed while loading page', this.time);
+      console.log('total time passed while loading page', this.total());
       return ajaxLoaded;
   }, 500);
 ```

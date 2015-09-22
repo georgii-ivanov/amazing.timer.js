@@ -7,21 +7,21 @@
     var timer1,
         display = document.getElementById('display');
         
-    window.runCountDown() {
+    window.runCountDown = function() {
         (timer1) && (timer1.stop());
         timer1 = new Timer(function() {
             display.innerHTML = (20000-this.total())/1000;
             return (this.total<20000);
         }, 1000);
-    }
+    };
     
-    window.runInterval() {
+    window.runInterval = function() {
         (timer1) && (timer1.stop());
         timer1 = new Timer(function() {
             display.innerHTML = this.total()/1000;
             return true;
         }, 1000);
-    }
+    };
   };
   </script>
 </head>

@@ -1,17 +1,15 @@
 (function() {
-    var Timer = function(fn, interval, autostart) {
+var Timer = function(fn, interval, autostart) {
         var timer, ready = true, self = this,
             total = 0, time = 0, tick = 0,
             beg = new Date(), fin=new Date();
 
         this.loop = function() {
             clearTimeout(timer);
-            ready = false;
             beg = new Date();
             if (interval || interval === 0)
                 timer = setTimeout(function() {
                     self.fire(interval);
-                    ready = true;
                 }, interval);
         };
 
@@ -42,6 +40,10 @@
             total+=time;
             beg=new Date();
             (fn.call(this)) ? (this.loop()) : this.stop();
+        };
+
+        this.ready = function() {
+            return ready;
         };
 
         this.total = function() {

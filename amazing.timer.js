@@ -4,10 +4,12 @@
 
         this.loop = function() {
             clearTimeout(timer);
+            ready = false;
             beg = new Date();
             (interval !== undefined) && (
                 timer = setTimeout(function() {
                     self.fire(interval);
+                    ready = true;
                 }, interval)
             );
         };
@@ -18,14 +20,11 @@
         };
 
         this.start = function() {
-            // set start properties
             this.clear();
-            ready = false;
             this.loop();
         };
 
         this.stop = function() {
-            ready = true;
             clearTimeout(timer);
         };
 

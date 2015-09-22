@@ -71,14 +71,14 @@ https://rawgit.com/cloady/amazing.timer.js/master/example.html
 
 ```
   var timer1 = new Timer(function() {
-      console.log('loop number', this.tick(), ', time value', this.time());
+      console.log('tick number', this.tick(), ', time value', this.time());
       return true;
   });
   
   setTimeout(function() { timer1.fire(); 
        console.log('3 seconds timeout');
          setTimeout(function() { console.log('3 seconds passed'); 
-             timer1.loop(); 
+             timer1.step(); 
              setTimeout(function() { timer1.fire(); }, 3051);
      }, 3000);
   }, 5051);
@@ -92,6 +92,7 @@ https://rawgit.com/cloady/amazing.timer.js/master/example.html
 * ```total()``` -> integer. Get total timer run time in ms.
 * ```fire()``` -> integer. Fire event before timer tick (you can sent time in ms as parameter).
 * ```loop()``` -> integer. Starts new loop.
+* ```step()``` -> integer. Starts new step/tick.
 * ```stop()``` -> null. Stop the timer.
 * ```start()``` -> null. Stop the timer.
 * ```clear()``` -> null. Reset timer counters.

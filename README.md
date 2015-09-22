@@ -51,3 +51,17 @@ Very usable and simple javascript object-oriented timer implementation.
       }, 1000);
 ```
       
+* Timer uses as stopwatch
+
+```
+  var timer1 = new Timer(function() {
+      console.log('loop number', this.tick(), ', time value', this.time());
+      return true;
+  });
+  
+  setTimeout(function() { timer1.fire(); }, 5051);
+  console.log('3 seconds timeout');
+  setTimeout(function() { console.log('3 seconds passed'); }, 3000);
+  timer1.loop(); 
+  setTimeout(function() { timer1.fire(); }, 3051);
+```

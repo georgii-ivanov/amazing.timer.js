@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+  <script src="amazing.timer.js"></script>
+  <title>Amazing javascript timer examples</title>
+  <script>
+    var timer1,
+        display = document.getElementById('display');
+        
+    function runCountDown() {
+        (timer1) && (timer1.stop());
+        timer1 = new Timer(function() {
+            display.innerHTML = (20000-this.total())/1000;
+            return (this.total<20000);
+        }, 1000);
+    }
+    
+    function runInterval() {
+        (timer1) && (timer1.stop());
+        timer1 = new Timer(function() {
+            display.innerHTML = this.total()/1000;
+            return true;
+        }, 1000);
+    }
+  </script>
+</head>
+<body>
+  <div id="display"></div>
+  <button onclick="runInterval()" value="Run Interval"> <button onclick="runCountDown()" value="run Countdown">
+</body>

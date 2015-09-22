@@ -10,7 +10,7 @@ Very usable and simple javascript object-oriented timer implementation.
 
 ```
    var timer1 = new Timer(function() {
-      console.log('a 1 second left');
+      console.log('seconds left:', this.tick());
       return true;
    }, 1000);
    

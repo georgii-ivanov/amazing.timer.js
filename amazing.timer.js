@@ -1,43 +1,52 @@
 (function() {
-    var Timer = function(fn, interval) {
+    var Timer = function(fn, interval, autostart) {
         var timer, ready = true, self = this,
-            beg = 0, fin = 0, total = 0, tick = 0;
+            total = 0, time = 0, tick = 0,
+            beg = new Date(), fin=new Date();
 
         this.loop = function() {
             clearTimeout(timer);
             ready = false;
             beg = new Date();
-            (interval !== undefined) && (
+            if (interval || interval === 0)
                 timer = setTimeout(function() {
                     self.fire(interval);
                     ready = true;
-                }, interval)
-            );
+                }, interval);
         };
 
         this.clear = function() {
-            tick=total=beg=fin=0;
+            tick=total=time=0;
+            beg=fin=new Date();
         };
 
         this.start = function() {
             this.clear();
             this.loop();
+            ready = false;
         };
 
         this.stop = function() {
+            ready = true;
             clearTimeout(timer);
         };
 
-        this.fire = function(time) {
+        this.fire = function(cur) {
             if (ready) return;
             tick++;
             fin=new Date();
-            total+=(time!==undefined) ? time : fin-beg;
+            time=(cur!==undefined) ? cur : fin-beg;
+            total+=time;
+            beg=new Date();
             (fn.call(this)) ? (this.loop()) : this.stop();
         };
 
-        this.time = function() {
+        this.total = function() {
             return total;
+        };
+
+        this.time = function() {
+            return time;
         };
 
         this.tick = function() {
@@ -48,7 +57,8 @@
             return timer;
         };
 
-        this.start();
+        if (autostart === undefined || autostart)
+            this.start();
     };
     
     this.Timer = Timer;

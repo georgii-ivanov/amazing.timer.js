@@ -11,7 +11,7 @@
         (timer1) && (timer1.stop());
         timer1 = new Timer(function() {
             display.innerHTML = (20000-this.total())/1000;
-            return (this.total<20000);
+            return (this.total()<20000);
         }, 1000);
     };
     

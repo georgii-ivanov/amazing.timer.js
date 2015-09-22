@@ -1,6 +1,6 @@
 # amazing.timer.js
 
-*Javascript Amazing Timer*
+**Javascript Amazing Timer**
 
 Very usable and simple javascript object-oriented timer implementation.
 
@@ -42,3 +42,12 @@ Very usable and simple javascript object-oriented timer implementation.
   }, 500);
 ```
   
+* Timer countdown example
+
+```
+   var timer1 = new Timer(function() { 
+      console.log('countdown ... ', 20000-this.time()); 
+      return (this.time()<20000); 
+      }, 1000);
+```
+      

@@ -61,7 +61,7 @@
         var li = document.createElement('li');
         li.innerHTML = 'Loop: <b>'+timer1.loop()+'</b>, time: <b>'+timer1.time()/1000+'</b>';
         history.appendChild(li);
-        timer1.next();
+        timer1.reset();
     };
     window.stopWatch = function() {
         timer1.stop();

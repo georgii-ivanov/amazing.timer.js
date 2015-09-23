@@ -4,7 +4,8 @@
             total = 0, time = 0, tick = 0, loop = 1,
             beg = new Date(), fin=new Date();
 
-        this.next = function() {
+        this.reset = function() {
+            /*clearTimeout*/clearInterval(timer);
             loop++;
             time=0;
             tick=0;
@@ -42,7 +43,6 @@
 
         this.step = function() {
             if (ready) return;
-            beg = new Date();
         	//clearTimeout(timer);
             if (interval || interval === 0)
                 timer = /*setTimeout*/setInterval(function() {

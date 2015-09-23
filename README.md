@@ -6,6 +6,8 @@ Very usable and simple javascript object-oriented timer implementation.
 Displays real time passed and counting ticks.
 Simple JS API.
 
+![stopwatchapp](https://cloud.githubusercontent.com/assets/1070139/10061488/ee1ecc08-6261-11e5-9362-9e9c07e881e7.PNG)
+
 ### Demo:
 
 Simple, Countdown, Stopwatch:

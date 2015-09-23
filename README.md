@@ -8,7 +8,11 @@ Simple JS API.
 
 ### Demo:
 
-https://rawgit.com/cloady/amazing.timer.js/master/example.html
+Simple, Countdown, Stopwatch:
+   https://rawgit.com/cloady/amazing.timer.js/master/example.html
+
+Stopwatch with history:
+   https://rawgit.com/cloady/amazing.timer.js/master/index.html
 
 ### Examples:
 

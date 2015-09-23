@@ -10,6 +10,15 @@ https://rawgit.com/cloady/amazing.timer.js/master/example.html
 
 ### Examples:
 
+* Using for store time
+
+```
+   var timer1 = new Timer();
+   // some actions
+   timer1.stop();
+   console.log(timer1.total());
+```
+
 * Set interval analog
 
 ```

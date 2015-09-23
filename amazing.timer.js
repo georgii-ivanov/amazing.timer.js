@@ -24,7 +24,7 @@
         };
 
         this.stop = function() {
-            clearInterval(timer);
+            /*clearTimeout*/clearInterval(timer);
             ready = true;
             fin=new Date();
             total+=fin-beg;
@@ -37,15 +37,15 @@
             time+=fin-beg;
             total+=fin-beg;
             beg=new Date();
-            if (!fn || !fn.call(this)) 
-            	this.stop();
+            (fn && fn.call(this)) ? /*this.step()*/null : this.stop();
         };
 
         this.step = function() {
             if (ready) return;
             beg = new Date();
+        	//clearTimeout(timer);
             if (interval || interval === 0)
-                timer = setInterval(function() {
+                timer = /*setTimeout*/setInterval(function() {
                     self.fire();
                 }, interval);
         };

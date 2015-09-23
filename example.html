@@ -10,8 +10,8 @@
     window.runCountDown = function() {
         (timer1) && (timer1.stop());
         timer1 = new Timer(function() {
-            display.innerHTML = (20000-this.total())/1000;
-            return (this.total()<20000);
+            display.innerHTML = 20-this.tick();
+            return (this.tick()<20);
         }, 1000);
     };
 
@@ -25,7 +25,7 @@
     window.runInterval = function() {
         (timer1) && (timer1.stop());
         timer1 = new Timer(function() {
-            display.innerHTML = this.total()/1000;
+            display.innerHTML = this.tick();
             return true;
         }, 1000);
     };

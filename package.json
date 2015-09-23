@@ -1,0 +1,14 @@
+{
+	"run": "nodewebkit",
+	"main": "index.html",
+	"name": "Stopwatch",
+	"description": "nodewebkit timer application",
+	"mobile": true,
+	"window": {
+		"width": 320,
+		"height": 480,
+		"toolbar": false,
+		"title": "Stopwatch",
+		"resizable": false
+	}
+}

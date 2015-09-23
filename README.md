@@ -3,6 +3,8 @@
 **Javascript Amazing Timer**
 
 Very usable and simple javascript object-oriented timer implementation.
+Displays real time passed and counting ticks.
+Simple JS API.
 
 ### Demo:
 

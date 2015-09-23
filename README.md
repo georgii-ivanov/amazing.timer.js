@@ -53,6 +53,7 @@ https://rawgit.com/cloady/amazing.timer.js/master/example.html
 ```
   var timer1 = new Timer(function() {
       console.log('tick new 500ms, tick number is', this.tick());
+      return (this.tick()<10);
   });
 ```
 
@@ -71,7 +72,7 @@ https://rawgit.com/cloady/amazing.timer.js/master/example.html
 
 ```
    var timer1 = new Timer(function() {  
-      console.log('countdown', 20000-this.total()); 
+      console.log('countdown', 20-this.tick()); 
       return (this.total() < 20000);  
    }, 1000);
 ```

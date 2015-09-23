@@ -24,7 +24,7 @@
         };
 
         this.stop = function() {
-            clearTimeout(timer);
+            clearInterval(timer);
             ready = true;
             fin=new Date();
             total+=fin-beg;
@@ -32,7 +32,7 @@
 
         this.fire = function(cur) {
             if (ready) return;
-            clearTimeout(timer);
+            clearInterval(timer);
             tick++;
             fin=new Date();
             time+=(cur!==undefined) ? cur : fin-beg;
@@ -46,7 +46,7 @@
             clearTimeout(timer);
             beg = new Date();
             if (interval || interval === 0)
-                timer = setTimeout(function() {
+                timer = setInterval(function() {
                     self.fire(/*interval*/);
                 }, interval);
         };

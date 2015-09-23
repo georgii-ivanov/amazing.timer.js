@@ -30,12 +30,12 @@
             total+=fin-beg;
         };
 
-        this.fire = function(cur) {
+        this.fire = function() {
             if (ready) return;
             tick++;
             fin=new Date();
-            time+=(cur!==undefined) ? cur : fin-beg;
-            total+=(cur!==undefined) ? cur : fin-beg;
+            time+=fin-beg;
+            total+=fin-beg;
             beg=new Date();
             if (!fn || !fn.call(this)) 
             	this.stop();
@@ -46,7 +46,7 @@
             beg = new Date();
             if (interval || interval === 0)
                 timer = setInterval(function() {
-                    self.fire(interval);
+                    self.fire();
                 }, interval);
         };
 

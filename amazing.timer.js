@@ -47,7 +47,7 @@
             beg = new Date();
             if (interval || interval === 0)
                 timer = setTimeout(function() {
-                    self.fire(interval);
+                    self.fire(/*interval*/);
                 }, interval);
         };
 

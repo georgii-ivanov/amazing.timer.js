@@ -20,11 +20,14 @@
         this.start = function() {
             ready = false;
             this.step();
+            beg=new Date();
         };
 
         this.stop = function() {
             clearTimeout(timer);
             ready = true;
+            fin=new Date();
+            total+=fin-beg;
         };
 
         this.fire = function(cur) {
@@ -35,7 +38,7 @@
             time+=(cur!==undefined) ? cur : fin-beg;
             total+=(cur!==undefined) ? cur : fin-beg;
             beg=new Date();
-            (fn.call(this)) ? this.step() : this.stop();
+            (fn && fn.call(this)) ? this.step() : this.stop();
         };
 
         this.step = function() {

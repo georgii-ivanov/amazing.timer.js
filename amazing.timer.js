@@ -32,22 +32,21 @@
 
         this.fire = function(cur) {
             if (ready) return;
-            clearInterval(timer);
             tick++;
             fin=new Date();
             time+=(cur!==undefined) ? cur : fin-beg;
             total+=(cur!==undefined) ? cur : fin-beg;
             beg=new Date();
-            (fn && fn.call(this)) ? this.step() : this.stop();
+            if (!fn || !fn.call(this)) 
+            	this.stop();
         };
 
         this.step = function() {
             if (ready) return;
-            clearTimeout(timer);
             beg = new Date();
             if (interval || interval === 0)
                 timer = setInterval(function() {
-                    self.fire(/*interval*/);
+                    self.fire(interval);
                 }, interval);
         };
 

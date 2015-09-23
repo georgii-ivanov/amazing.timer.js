@@ -109,7 +109,8 @@ Stopwatch with history:
 * ```time()``` -> integer. Get iteration time in ms.
 * ```total()``` -> integer. Get total timer run time in ms.
 * ```fire()``` -> integer. Fire event before timer tick (you can sent time in ms as parameter).
-* ```loop()``` -> integer. Starts new loop.
+* ```restart()``` -> integer. Starts new loop.
+* ```loop()``` -> integer. Get current number of loop.
 * ```step()``` -> integer. Starts new step/tick.
 * ```stop()``` -> null. Stop the timer.
 * ```start()``` -> null. Stop the timer.
